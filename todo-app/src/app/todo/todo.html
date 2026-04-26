@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<div class="todo-wrapper">
+  <div class="todo-card">
+    <h2>{{ title }}</h2>
+    <div class="form-row">
+      <input [(ngModel)]="task" placeholder="Enter your task">
+      <input type="date" [(ngModel)]="date">
+      <input type="time" [(ngModel)]="time">
+      <select [(ngModel)]="ampm">
+        <option>AM</option>
+        <option>PM</option>
+      </select>
+    </div>
+    <button (click)="save()">Save Task</button>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<app-header></app-header>
+
+<div class="page-wrapper">
+  <div class="table-card">
+    <h2>Your Tasks</h2>
+    <table *ngIf="tasks.length > 0">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of tasks; let i = index">
+          <td>{{ t.task }}</td>
+          <td>{{ t.date }}</td>
+          <td>{{ t.time }} {{ t.ampm }}</td>
+          <td>
+            <div class="actions">
+              <button class="edit" (click)="edit(i)">Edit</button>
+              <button class="delete" (click)="delete(i)">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="empty" *ngIf="tasks.length === 0">
+      <p>No tasks yet! Click "Add Task" to create your first one.</p>
+    </div>
+  </div>
+</div>
